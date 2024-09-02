@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block content %}
+
+<h1>Please Login</h1>
+<div>
+    <form method="post">
+        {{ forms.hidden_tag() }}
+        
+        <!-- Username Field -->
+        <div>
+            {{ forms.username.label() }}<br>
+            {{ forms.username(placeholder="username") }}
+        </div>
+        
+        
+        <!-- Password Field -->
+        <div>
+            {{ forms.password.label() }}<br>
+            {{ forms.password(placeholder="Password") }}
+        </div>
+
+        <div>
+            <h6>Do not have an account?</h6>
+            <a href="{{url_for('register_page')}}">Sign up</a>
+        </div>
+        
+        
+        <!-- Submit Button -->
+        <div>
+            {{ forms.submit() }}
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}

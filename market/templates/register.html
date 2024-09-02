@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}
+Register Page
+{% endblock %}
+
+{% block content %}
+
+<h1>Create your account!</h1>
+<div>
+    <form method="post">
+        {{ forms.hidden_tag() }}
+        
+        <!-- Username Field -->
+        <div>
+            {{ forms.username.label() }}<br>
+            {{ forms.username(placeholder="username") }}
+        </div>
+        
+        <!-- Email Field -->
+        <div>
+            {{ forms.email.label() }}<br>
+            {{ forms.email(placeholder="email") }}
+        </div>
+        
+        <!-- Password Field -->
+        <div>
+            {{ forms.password1.label() }}<br>
+            {{ forms.password1(placeholder="Password") }}
+        </div>
+        
+        <!-- Confirm Password Field -->
+        <div>
+            {{ forms.password2.label() }}<br>
+            {{ forms.password2(placeholder="Confirm Password") }}
+        </div>
+        
+        <div>
+            <h6>Already have a account?</h6>
+            <a href="{{url_for('login_page')}}">Login</a>
+        </div>
+  
+        <!-- Submit Button -->
+        <div>
+            {{ forms.submit() }}
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
